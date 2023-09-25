@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/2-a-areas/readings/the-new-mood-therapy/","tags":["读书笔记","抑郁","心理学"],"noteIcon":"default"}
+{"dg-publish":true,"permalink":"/2-a-areas/readings/the-new-mood-therapy/","tags":["读书笔记","抑郁","心理学"],"noteIcon":"1"}
 ---
 
 # 伯恩斯新情绪疗法 读后感
