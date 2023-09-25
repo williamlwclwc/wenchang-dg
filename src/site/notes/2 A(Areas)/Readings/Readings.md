@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/2-a-areas/readings/readings/","noteIcon":"default"}
+{"dg-publish":true,"permalink":"/2-a-areas/readings/readings/","noteIcon":"1"}
 ---
 
 
