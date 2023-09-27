@@ -1,0 +1,100 @@
+---
+{"dg-publish":true,"permalink":"/1-p-projects/sde-interview-prep/algorithms/leetcode/142-linked-list-cycle-ii/","tags":["Leetcode/Medium","Leetcode/Hot100","Leetcode/代码随想录"],"noteIcon":"1"}
+---
+
+## 题目信息
+
+- 链接: [linked-list-cycle-ii](https://leetcode-cn.com/problems/linked-list-cycle-ii/)
+- Given the `head` of a linked list, return _the node where the cycle begins. If there is no cycle, return_ `null`.
+  
+  There is a cycle in a linked list if there is some node in the list that can be reached again by continuously following the `next` pointer. Internally, `pos` is used to denote the index of the node that tail's `next` pointer is connected to (**0-indexed**). It is `-1` if there is no cycle. **Note that** `pos` **is not passed as a parameter**.
+
+	**Do not modify** the linked list.
+	
+	**Example 1:**
+	
+	![](https://assets.leetcode.com/uploads/2018/12/07/circularlinkedlist.png)
+	
+	```
+	Input: head = [3,2,0,-4], pos = 1
+	Output: tail connects to node index 1
+	Explanation: There is a cycle in the linked list, where tail connects to the second node.
+	
+	```
+	
+	**Example 2:**
+	
+	![](https://assets.leetcode.com/uploads/2018/12/07/circularlinkedlist_test2.png)
+	
+	```
+	Input: head = [1,2], pos = 0
+	Output: tail connects to node index 0
+	Explanation: There is a cycle in the linked list, where tail connects to the first node.
+	
+	```
+	
+	**Example 3:**
+	
+	![](https://assets.leetcode.com/uploads/2018/12/07/circularlinkedlist_test3.png)
+	
+	```
+	Input: head = [1], pos = -1
+	Output: no cycle
+	Explanation: There is no cycle in the linked list.
+	
+	```
+	
+	**Constraints:**
+	-   The number of the nodes in the list is in the range `[0, 10<sup>4</sup>]`.
+	-   `-10<sup>5</sup> <= Node.val <= 10<sup>5</sup>`
+	-   `pos` is `-1` or a **valid index** in the linked-list.
+	
+	**Follow up:** Can you solve it using `O(1)` (i.e. constant) memory?
+
+- 描述:
+	- 给定一个链表，返回链表开始入环的第一个节点。 如果链表无环，则返回 null。
+	- 如果链表中有某个节点，可以通过连续跟踪 next 指针再次到达，则链表中存在环。 为了表示给定链表中的环，评测系统内部使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。如果 pos 是 -1，则在该链表中没有环。注意：pos 不作为参数进行传递，仅仅是为了标识链表的实际情况。
+	- 不允许修改链表。
+
+## 解题思路
+
+- 使用与 [[1 P(Projects)/SDE Interview Prep/Algorithms/Leetcode/Linked List Cycle\|Linked List Cycle]] 快慢指针相同的做法，fast和slow一起从head出发，fast每回合走2，slow每回合走1，当快慢指针第一次相遇的时候，将fast重置为初始head的位置，再继续以相同速度走，直到两个指针第二次相遇，其位置就是环开始的位置
+	- Proof: [[1 P(Projects)/SDE Interview Prep/Algorithms/Leetcode/287 Find the Duplicate Number\|287 Find the Duplicate Number]] [[5 Inbox/Floyd's Algorithm\|Floyd's Algorithm]]
+- 示意图:  <style> .container {font-family: sans-serif; text-align: center;} .button-wrapper button {z-index: 1;height: 40px; width: 100px; margin: 10px;padding: 5px;} .excalidraw .App-menu_top .buttonList { display: flex;} .excalidraw-wrapper { height: 800px; margin: 50px; position: relative;} :root[dir="ltr"] .excalidraw .layer-ui__wrapper .zen-mode-transition.App-menu_bottom--transition-left {transform: none;} </style><script src="https://cdn.jsdelivr.net/npm/react@17/umd/react.production.min.js"></script><script src="https://cdn.jsdelivr.net/npm/react-dom@17/umd/react-dom.production.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@excalidraw/excalidraw@0/dist/excalidraw.production.min.js"></script><div id="142_Linked_List_Cycleexcalidraw.md1"></div><script>(function(){const InitialData={"type":"excalidraw","version":2,"source":"https://github.com/zsviczian/obsidian-excalidraw-plugin/releases/tag/1.9.19","elements":[{"id":"r_MREtH_W4_DDQO5SGN8F","type":"line","x":-275.3832702636719,"y":-145.91556549072266,"width":242.40643310546875,"height":1.747283935546875,"angle":0,"strokeColor":"#1e1e1e","backgroundColor":"transparent","fillStyle":"hachure","strokeWidth":1,"strokeStyle":"solid","roughness":1,"opacity":100,"groupIds":[],"frameId":null,"roundness":{"type":2},"seed":1587719906,"version":123,"versionNonce":1857847102,"isDeleted":false,"boundElements":null,"updated":1695773213603,"link":null,"locked":false,"points":[[0,0],[242.40643310546875,1.747283935546875]],"lastCommittedPoint":null,"startBinding":null,"endBinding":null,"startArrowhead":null,"endArrowhead":null},{"id":"vimwaib9BnJ5fshbKJOS8","type":"line","x":-31.636016845703125,"y":-144.21820831298828,"width":142.68243408203125,"height":125.16314697265625,"angle":0,"strokeColor":"#1e1e1e","backgroundColor":"transparent","fillStyle":"hachure","strokeWidth":1,"strokeStyle":"solid","roughness":1,"opacity":100,"groupIds":[],"frameId":null,"roundness":{"type":2},"seed":2114741822,"version":262,"versionNonce":1037909858,"isDeleted":false,"boundElements":null,"updated":1695773173056,"link":null,"locked":false,"points":[[0,0],[47.0484619140625,-86.644287109375],[142.68243408203125,-125.16314697265625]],"lastCommittedPoint":null,"startBinding":null,"endBinding":null,"startArrowhead":null,"endArrowhead":null},{"id":"NuAZcQysKCuvy0czummw2","type":"line","x":113.13601684570312,"y":-268.45780181884766,"width":119.43280029296875,"height":123.40518188476562,"angle":0,"strokeColor":"#1e1e1e","backgroundColor":"transparent","fillStyle":"hachure","strokeWidth":1,"strokeStyle":"solid","roughness":1,"opacity":100,"groupIds":[],"frameId":null,"roundness":{"type":2},"seed":1484981026,"version":190,"versionNonce":1961955874,"isDeleted":false,"boundElements":null,"updated":1695773193106,"link":null,"locked":false,"points":[[0,0],[89.28656005859375,39.303375244140625],[119.43280029296875,123.40518188476562]],"lastCommittedPoint":null,"startBinding":null,"endBinding":null,"startArrowhead":null,"endArrowhead":null},{"id":"EXzQxe_LMypIPBZg1jcPm","type":"line","x":233.43173217773438,"y":-145.04193878173828,"width":115.08416748046875,"height":115.08416748046875,"angle":0,"strokeColor":"#1e1e1e","backgroundColor":"transparent","fillStyle":"hachure","strokeWidth":1,"strokeStyle":"solid","roughness":1,"opacity":100,"groupIds":[],"frameId":null,"roundness":{"type":2},"seed":708353470,"version":103,"versionNonce":357420066,"isDeleted":false,"boundElements":null,"updated":1695773195908,"link":null,"locked":false,"points":[[0,0],[-25.3499755859375,80.74273681640625],[-115.08416748046875,115.08416748046875]],"lastCommittedPoint":null,"startBinding":null,"endBinding":null,"startArrowhead":null,"endArrowhead":null},{"id":"c63OTa7__eEhlztWRkUqG","type":"line","x":118.16751098632812,"y":-27.33869171142578,"width":150.10662841796875,"height":114.52606201171875,"angle":0,"strokeColor":"#1e1e1e","backgroundColor":"transparent","fillStyle":"hachure","strokeWidth":1,"strokeStyle":"solid","roughness":1,"opacity":100,"groupIds":[],"frameId":null,"roundness":{"type":2},"seed":971902306,"version":108,"versionNonce":1732703358,"isDeleted":false,"boundElements":null,"updated":1695773198622,"link":null,"locked":false,"points":[[0,0],[-97.70574951171875,-34.29681396484375],[-150.10662841796875,-114.52606201171875]],"lastCommittedPoint":null,"startBinding":null,"endBinding":null,"startArrowhead":null,"endArrowhead":null},{"id":"qDlfjndd","type":"text","x":-155.20419311523438,"y":-182.20459747314453,"width":13.339996337890625,"height":25,"angle":0,"strokeColor":"#1e1e1e","backgroundColor":"transparent","fillStyle":"hachure","strokeWidth":1,"strokeStyle":"solid","roughness":1,"opacity":100,"groupIds":[],"frameId":null,"roundness":null,"seed":1292892706,"version":96,"versionNonce":1345470882,"isDeleted":false,"boundElements":null,"updated":1695773224872,"link":null,"locked":false,"text":"a","rawText":"a","fontSize":20,"fontFamily":1,"textAlign":"left","verticalAlign":"top","baseline":17,"containerId":null,"originalText":"a","lineHeight":1.25},{"id":"Ydkgzwkz25HLuknEKNqGh","type":"arrow","x":-118.50533646511128,"y":-28.49756622314453,"width":71.84612626003316,"height":92.54583740234375,"angle":0,"strokeColor":"#1e1e1e","backgroundColor":"transparent","fillStyle":"hachure","strokeWidth":1,"strokeStyle":"solid","roughness":1,"opacity":100,"groupIds":[],"frameId":null,"roundness":{"type":2},"seed":357780706,"version":359,"versionNonce":1610311330,"isDeleted":false,"boundElements":null,"updated":1695773487466,"link":null,"locked":false,"points":[[0,0],[71.84612626003316,-92.54583740234375]],"lastCommittedPoint":null,"startBinding":{"elementId":"hhk8KQqo","focus":-0.2745822238500602,"gap":15.99969482421875},"endBinding":null,"startArrowhead":null,"endArrowhead":"arrow"},{"id":"hhk8KQqo","type":"text","x":-258.2618713378906,"y":-12.497871398925781,"width":331.6597595214844,"height":25,"angle":0,"strokeColor":"#1e1e1e","backgroundColor":"transparent","fillStyle":"hachure","strokeWidth":1,"strokeStyle":"solid","roughness":1,"opacity":100,"groupIds":[],"frameId":null,"roundness":null,"seed":1679970494,"version":179,"versionNonce":1769738978,"isDeleted":false,"boundElements":[{"id":"Ydkgzwkz25HLuknEKNqGh","type":"arrow"}],"updated":1695773487465,"link":null,"locked":false,"text":"Loop Entrance/End of Linked List","rawText":"Loop Entrance/End of Linked List","fontSize":20,"fontFamily":1,"textAlign":"left","verticalAlign":"top","baseline":17,"containerId":null,"originalText":"Loop Entrance/End of Linked List","lineHeight":1.25},{"id":"gKZ9mIVj","type":"text","x":-10.359039306640625,"y":-277.90528106689453,"width":10.159988403320312,"height":25,"angle":0,"strokeColor":"#1e1e1e","backgroundColor":"transparent","fillStyle":"hachure","strokeWidth":1,"strokeStyle":"solid","roughness":1,"opacity":100,"groupIds":[],"frameId":null,"roundness":null,"seed":1936397182,"version":2,"versionNonce":2088808226,"isDeleted":false,"boundElements":null,"updated":1695773287911,"link":null,"locked":false,"text":"b","rawText":"b","fontSize":20,"fontFamily":1,"textAlign":"left","verticalAlign":"top","baseline":17,"containerId":null,"originalText":"b","lineHeight":1.25},{"id":"mKFDbCPi","type":"text","x":180.57321166992188,"y":-88.54950714111328,"width":10.039993286132812,"height":25,"angle":0,"strokeColor":"#1e1e1e","backgroundColor":"transparent","fillStyle":"hachure","strokeWidth":1,"strokeStyle":"solid","roughness":1,"opacity":100,"groupIds":[],"frameId":null,"roundness":null,"seed":1868113086,"version":54,"versionNonce":247479138,"isDeleted":false,"boundElements":null,"updated":1695773338469,"link":null,"locked":false,"text":"c","rawText":"c","fontSize":20,"fontFamily":1,"textAlign":"left","verticalAlign":"top","baseline":17,"containerId":null,"originalText":"c","lineHeight":1.25},{"id":"fKRtVepEfPmmMpCj76vAS","type":"arrow","x":168.72128295898438,"y":-382.23145294189453,"width":54.26947021484375,"height":95.07763671875,"angle":0,"strokeColor":"#1e1e1e","backgroundColor":"transparent","fillStyle":"hachure","strokeWidth":1,"strokeStyle":"solid","roughness":1,"opacity":100,"groupIds":[],"frameId":null,"roundness":{"type":2},"seed":1780078014,"version":52,"versionNonce":1875496226,"isDeleted":false,"boundElements":null,"updated":1695773332308,"link":null,"locked":false,"points":[[0,0],[-54.26947021484375,95.07763671875]],"lastCommittedPoint":null,"startBinding":{"elementId":"2RMgu351","focus":0.06626266953036275,"gap":9.07818603515625},"endBinding":null,"startArrowhead":null,"endArrowhead":"arrow"},{"id":"2RMgu351","type":"text","x":98.82833862304688,"y":-416.3096389770508,"width":177.09982299804688,"height":25,"angle":0,"strokeColor":"#1e1e1e","backgroundColor":"transparent","fillStyle":"hachure","strokeWidth":1,"strokeStyle":"solid","roughness":1,"opacity":100,"groupIds":[],"frameId":null,"roundness":null,"seed":1530567778,"version":75,"versionNonce":1092081890,"isDeleted":false,"boundElements":[{"id":"fKRtVepEfPmmMpCj76vAS","type":"arrow"}],"updated":1695773332308,"link":null,"locked":false,"text":"First-time Overlap","rawText":"First-time Overlap","fontSize":20,"fontFamily":1,"textAlign":"left","verticalAlign":"top","baseline":17,"containerId":null,"originalText":"First-time Overlap","lineHeight":1.25},{"id":"_Hz4udmmYikQAst78YQsq","type":"arrow","x":-206.40911901192288,"y":-283.15137358270795,"width":63.04403650565524,"height":120.76846190057904,"angle":0,"strokeColor":"#1e1e1e","backgroundColor":"transparent","fillStyle":"hachure","strokeWidth":1,"strokeStyle":"solid","roughness":1,"opacity":100,"groupIds":[],"frameId":null,"roundness":{"type":2},"seed":768252414,"version":112,"versionNonce":744332926,"isDeleted":false,"boundElements":null,"updated":1695773509251,"link":null,"locked":false,"points":[[0,0],[-63.04403650565524,120.76846190057904]],"lastCommittedPoint":null,"startBinding":{"elementId":"yen1IUVF","focus":0.8488492075257187,"gap":11.9415283203125},"endBinding":null,"startArrowhead":null,"endArrowhead":"arrow"},{"id":"yen1IUVF","type":"text","x":-198.46078491210938,"y":-317.06339263916016,"width":116.0198974609375,"height":25,"angle":0,"strokeColor":"#1e1e1e","backgroundColor":"transparent","fillStyle":"hachure","strokeWidth":1,"strokeStyle":"solid","roughness":1,"opacity":100,"groupIds":[],"frameId":null,"roundness":null,"seed":101510498,"version":63,"versionNonce":702486078,"isDeleted":false,"boundElements":[{"id":"_Hz4udmmYikQAst78YQsq","type":"arrow"}],"updated":1695773509250,"link":null,"locked":false,"text":"Start Point","rawText":"Start Point","fontSize":20,"fontFamily":1,"textAlign":"left","verticalAlign":"top","baseline":17,"containerId":null,"originalText":"Start Point","lineHeight":1.25},{"id":"D3R5VCnJ","type":"text","x":-155.86495971679688,"y":-180.18744659423828,"width":10,"height":25,"angle":0,"strokeColor":"#1e1e1e","backgroundColor":"transparent","fillStyle":"hachure","strokeWidth":1,"strokeStyle":"solid","roughness":1,"opacity":100,"groupIds":[],"frameId":null,"roundness":null,"seed":185690594,"version":2,"versionNonce":1338099070,"isDeleted":true,"boundElements":null,"updated":1695773211427,"link":null,"locked":false,"text":"","rawText":"","fontSize":20,"fontFamily":1,"textAlign":"left","verticalAlign":"top","baseline":17,"containerId":null,"originalText":"","lineHeight":1.25},{"id":"6O6zjVsu","type":"text","x":-165.35903930664062,"y":-141.90528106689453,"width":10,"height":25,"angle":0,"strokeColor":"#1e1e1e","backgroundColor":"transparent","fillStyle":"hachure","strokeWidth":1,"strokeStyle":"solid","roughness":1,"opacity":100,"groupIds":[],"frameId":null,"roundness":null,"seed":265033342,"version":2,"versionNonce":1573370914,"isDeleted":true,"boundElements":null,"updated":1695773213561,"link":null,"locked":false,"text":"","rawText":"","fontSize":20,"fontFamily":1,"textAlign":"left","verticalAlign":"top","baseline":17,"containerId":null,"originalText":"","lineHeight":1.25},{"id":"DMAq5dz1","type":"text","x":-152.35903930664062,"y":-146.90528106689453,"width":10,"height":25,"angle":0,"strokeColor":"#1e1e1e","backgroundColor":"transparent","fillStyle":"hachure","strokeWidth":1,"strokeStyle":"solid","roughness":1,"opacity":100,"groupIds":[],"frameId":null,"roundness":null,"seed":2142783422,"version":2,"versionNonce":1040443106,"isDeleted":true,"boundElements":null,"updated":1695773216551,"link":null,"locked":false,"text":"","rawText":"","fontSize":20,"fontFamily":1,"textAlign":"left","verticalAlign":"top","baseline":17,"containerId":null,"originalText":"","lineHeight":1.25}],"appState":{"theme":"dark","viewBackgroundColor":"#ffffff","currentItemStrokeColor":"#1e1e1e","currentItemBackgroundColor":"transparent","currentItemFillStyle":"hachure","currentItemStrokeWidth":1,"currentItemStrokeStyle":"solid","currentItemRoughness":1,"currentItemOpacity":100,"currentItemFontFamily":1,"currentItemFontSize":20,"currentItemTextAlign":"left","currentItemStartArrowhead":null,"currentItemEndArrowhead":"arrow","scrollX":562.8662719726562,"scrollY":582.9953002929688,"zoom":{"value":1},"currentItemRoundness":"round","gridSize":null,"gridColor":{"Bold":"#C9C9C9FF","Regular":"#EDEDEDFF"},"currentStrokeOptions":null,"previousGridSize":null,"frameRendering":{"enabled":true,"clip":true,"name":true,"outline":true}},"files":{}};InitialData.scrollToContent=true;App=()=>{const e=React.useRef(null),t=React.useRef(null),[n,i]=React.useState({width:void 0,height:void 0});return React.useEffect(()=>{i({width:t.current.getBoundingClientRect().width,height:t.current.getBoundingClientRect().height});const e=()=>{i({width:t.current.getBoundingClientRect().width,height:t.current.getBoundingClientRect().height})};return window.addEventListener("resize",e),()=>window.removeEventListener("resize",e)},[t]),React.createElement(React.Fragment,null,React.createElement("div",{className:"excalidraw-wrapper",ref:t},React.createElement(ExcalidrawLib.Excalidraw,{ref:e,width:n.width,height:n.height,initialData:InitialData,viewModeEnabled:!0,zenModeEnabled:!0,gridModeEnabled:!1})))},excalidrawWrapper=document.getElementById("142_Linked_List_Cycleexcalidraw.md1");ReactDOM.render(React.createElement(App),excalidrawWrapper);})();</script>
+- 我们假设初始到环入口为a，入口到第一次相遇为b，第一次相遇到末尾为c
+	- 对于slow而言，第一次相遇经过*若干回合*走了 `a+b`
+	- 对于fast而言，第一次相遇经过*若干回合*走了*n圈*`a+b+n(b+c)`
+	- fast一回合走2，slow一回合走1，所以设 `x=a+b`，`2x = a+b+n(b+c)`, 即 `a+b = n(b+c)`
+- 所以我们在相遇后让fast从头每回合走1，与slow再相遇在a的时候
+	- fast从start开始走了a，刚好在环入口
+	- 参照环入口位置，slow从距离环入口b的第一次相遇的位置又走了a，即相对于环入口位置来说走了: `a+b=n(b+c)`，刚好对于环入口点来说又走了n圈，还在环入口位置
+	- 所以这个这样第二次相遇位置就是要找的环的入口
+
+## 代码
+
+```python
+  # Definition for singly-linked list.
+  # class ListNode:
+  #     def __init__(self, x):
+  #         self.val = x
+  #         self.next = None
+  
+  class Solution:
+	  def detectCycle(self, head: Optional[ListNode]) -> Optional[ListNode]:
+		  fast, slow = head, head
+		  if head is None or fast.next is None:
+			  return None
+		  while fast is not None and slow is not None and fast.next is not None:
+			  fast = fast.next.next
+			  slow = slow.next
+			  if slow == fast:
+				  break
+		  if slow != fast:
+			  return None
+		  else:
+			  fast = head
+			  while slow != fast:
+				  slow = slow.next
+				  fast = fast.next
+			  return slow
+  ```
