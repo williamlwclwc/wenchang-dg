@@ -2,7 +2,8 @@
 {"dg-publish":true,"permalink":"/1-p-projects/sde-interview-prep/algorithms/leetcode/19-remove-nth-node-from-end-of-list/","tags":["Leetcode/Medium","Leetcode/Hot100","Leetcode/Blind75","Leetcode/代码随想录"],"noteIcon":"1"}
 ---
 
-- ## 题目信息
+## 题目信息
+
 - 链接: [remove-nth-node-from-end-of-list](https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/)
 - Given the `head` of a linked list, remove the `n<sup>th</sup>` node from the end of the list and return its head.
   
@@ -53,12 +54,12 @@
 
 ### 快慢指针
 
-- 分别使用快指针fast和慢指针slow，fast先遍历到N+1个结点，之和和在头结点的slow同时开始遍历，当fast到链表尾时，slow就处在倒数第N+1个结点了
+- [[1 P(Projects)/SDE Interview Prep/Algorithms/Topics/Two Pointers#快慢指针\|快慢指针]]: 分别使用快指针fast和慢指针slow，fast先遍历到N+1个结点，之和和在头结点的slow同时开始遍历，当fast到链表尾时，slow就处在倒数第N+1个结点了
 - 相当于fast先走了N+1，这样fast到终点时，slow距离终点还差N+1，即slow处在倒数N+1个节点的位置
 
 ### 删除链表节点
 
-- 删除p的下一个结点: `p.next = p.next.next`
+- [[1 P(Projects)/SDE Interview Prep/Algorithms/Topics/Linked List#删除节点\|删除p的下一个节点]]: `p.next = p.next.next`
 - 另外需要注意如果需要移除头结点可以使用 [[1 P(Projects)/SDE Interview Prep/Algorithms/Topics/Linked List#Dummy Node 哑巴/虚拟节点\|Dummy Node]] 
 
 ## 代码
@@ -97,8 +98,7 @@
 				  break
 			  p = p.next
 		  return head
-	  
-	  ```
+```
 
 ### 快慢指针
 
