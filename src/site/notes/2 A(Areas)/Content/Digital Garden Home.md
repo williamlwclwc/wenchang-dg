@@ -6,7 +6,7 @@
 
 ## About Digital Garden 
 
-- Welcome to Wenchang's [[Digital Garden\|Digital Garden]]. This is the public version of my [[2 A(Areas)/PKM and Note Taking/Obsidian/Obsidian\|Obsidian]] vault.
+- Welcome to Wenchang's [[2 A(Areas)/PKM and Note Taking/Obsidian/Digital Garden\|Digital Garden]]. This is the public version of my [[2 A(Areas)/PKM and Note Taking/Obsidian/Obsidian\|Obsidian]] vault.
 - More about me: https://bento.me/wchliu
 ## Content 目录
 
